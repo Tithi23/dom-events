@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegate</title>
+</head>
+
+<body>
+    <h2>Event Delegate</h2>
+    <ul id="item-container">
+        <li class="item">Lorem, ipsum.</li>
+        <li class="item">Nostrum, modi!</li>
+        <li class="item">Fugiat, exercitationem.</li>
+        <li class="item">Doloremque, voluptate?</li>
+        <li class="item">Iusto, quisquam.</li>
+        <li class="item">Repellendus, ut.</li>
+    </ul>
+    <button id="add-item">Add Item</button>
+
+    <script>
+        // 1st system 
+        /*         const items = document.getElementsByClassName('item');
+                for (const item of items) {
+                    // console.log(item);
+                    item.addEventListener('click', function () {
+                        // console.log('remove item');
+                        document.getElementById('item-container').removeChild(item);
+                    });
+                } */
+
+        // 2nd system 
+        const items = document.getElementsByClassName('item');
+        for (const item of items) {
+            // console.log(item);
+            item.addEventListener('click', function (event) {
+                // console.log('remove item');
+                // console.log(event.target.parentNode);
+                event.target.parentNode.removeChild(event.target);
+            });
+        }
+
+
+        //sob remove hoye gele[ button] ta k click korle abar notun item add hobe
+
+        document.getElementById('add-item').addEventListener('click', function () {
+            const li = document.createElement('li');
+            li.innerText = 'Brand New Item';
+            const parent = document.getElementById('item-container');
+            parent.appendChild(li);
+        })
+
+        // new item vanish hoche na seita k vanish korte (kharap somadan)
+        /*         document.getElementById('add-item').addEventListener('click', function () {
+                    const li = document.createElement('li');
+                    li.innerText = 'Brand New Item';
+                    li.classList = add('item');
+                    const parent = document.getElementById('item-container');
+                    parent.appendChild(li);
+                    const items = document.getElementsByClassName('item');
+        
+                    for (const item of items) {
+                        // console.log(item);
+                        item.addEventListener('click', function (event) {
+                            // console.log('remove item');
+                            // console.log(event.target.parentNode);
+                            event.target.parentNode.removeChild(event.target);
+                        });
+                    }
+                })
+         */
+
+        // new item vanish hoche na seita k vanish korte (valo somadan)
+
+        document.getElementById('item-container').addEventListener('click', function (event) {
+            // console.log('remove item');
+            // console.log(event.target.parentNode);
+            event.target.parentNode.removeChild(event.target);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+    <h1 onclick="console.log('h1 is clicked')">Event niye Clickbaji</h1>
+
+    <!-- or alert-->
+    <h1 onclick="alert('valo hoye ja')">Event niye Clickbaji</h1>
+
+    <button onclick="alert(7)">Click Me</button>
+
+    <!-- or alert-->
+    <button onclick="console.log(7)">Click Me</button>
+
+    <!-- handle button -->
+    <!-- 1st system -->
+    <button onclick="document.body.style.backgroundColor='yellow'">Click Me:yellow</button>
+
+    <!-- 2nd system  -->
+    <button onclick="makeRed()">Click Me:red</button>
+
+    <!-- 3rd system  -->
+    <button id="make-blue-button">Click Me:Blue</button>
+
+    <!-- 4th system -->
+    <button id="make-green-button">Click Me:Green</button>
+
+    <!-- 5th system -->
+    <button id="make-goldenrod">Click Me:Golden Rod</button>
+
+    <!-- 6th system -->
+    <button id="make-hotpink">Click Me:Hotpink</button>
+
+    <!-- 7th system  -->
+    <button id="make-lightblue">Click Me:Lightblue</button>
+
+    <script src="js/event.js"></script>
+    <script>
+        // 2nd-
+        // function makeRed() {
+        //     document.body.style.backgroundColor = 'red';
+        // }
+
+        /*  3rd-
+         const blueButton = document.getElementById('make-blue-button');
+          // console.log(blueButton);
+          // just set the of the function
+          blueButton.onclick = makeBlue;
+  
+          function makeBlue() {
+              document.body.style.backgroundColor = 'blue';
+          } */
+
+        //   4th-
+        /*  const greenButton = document.getElementById('make-green-button');
+         // console.log(greenButton);
+         greenButton.onclick = function makeGreen() {
+             document.body.style.backgroundColor = 'Green';
+         }
+         // anonymous function
+         greenButton.onclick = function () {
+             document.body.style.backgroundColor = 'Green';
+         } */
+
+        // 5th-
+        /*  const goldenButton = document.getElementById('make-goldenrod');
+         goldenButton.addEventListener('click', makeGoldenRod);
+ 
+         function makeGoldenRod() {
+             document.body.style.backgroundColor = 'goldenrod';
+         }
+  */
+
+
+        // 6th-
+        /*  const pinkButton = document.getElementById('make-hotpink');
+         pinkButton.addEventListener('click', function () {
+             document.body.style.backgroundColor = 'hotpink';
+         }) */
+
+
+        // 7th-
+        // direct shortcut
+        // document.getElementById('make-lightblue').addEventListener('click', function () {
+        //     document.body.style.backgroundColor = 'lightblue';
+        // })
+
+    </script>
+</body>
+
+</html>
